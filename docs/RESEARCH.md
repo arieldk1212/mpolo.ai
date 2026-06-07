@@ -14,7 +14,7 @@ It's difficult because without some very, very, very careful engineering, anyt
 
 ## Physical Model
 
-1. A device that has motors, camera, body, no wires.
+1. A device that has motors, camera, body, no wires, sensors.
 
 
 ## How?
@@ -34,4 +34,27 @@ Agent (Brain), Tracking System, Control System, Mission System, Telemetry System
   etc.
 * UI -> Current Location Screen, Mission Screen, Controls, Tracking, Telemetry.
 
-### 
+### Agent
+
+* Small LLM (Large Language Model): A. Could interact with my home pc.
+  B. Could integrate small LLM and llama.cpp for inference, API wrapper for 
+    the interaction.
+  C. Which model? llama4? chat-gpt oss?
+  D. Define set of rules and basic "brain" for the agent, who is he, mission,
+    default actions, etc.
+
+### Tracking System
+
+* Consumes the coordinates of the agent, displays on map/screen UI,
+  option to view previous data points, timestamps, status at point x.
+
+### Control System
+
+* Option to override the agent controls and move the agent as we wish,
+  Move the camera to a desired elevation, azimuth.
+
+### Mission System
+
+* Set a mission, provide data, how do we pass data correctly, pulses of data
+  while the mission is running from the agent.
+

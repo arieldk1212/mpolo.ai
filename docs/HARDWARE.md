@@ -6,8 +6,12 @@
 
 ### MicroController
 
+* To connect (OLD): ssh adk@adk.local, pass: adk, WITHOUT tailscale (Ras OS).
+* To connect (UPDATED): ssh adk@192.168.7.8, WITHOUT tailscale (Ubuntu 26.04 + ROS 2 Lyrical Luth).
+
 * Raspberrypi 4 Model B 4GB RAM.
-* OS: Ubuntu 26.04 LTS + Jazzy ROS
+
+* OS: Ubuntu 26.04 LTS + ROS.
 
 * Architecture:
 Broadcom BCM2711, Quad core Cortex-A72 (ARM v8) 64-bit SoC @ 1.8GHz
