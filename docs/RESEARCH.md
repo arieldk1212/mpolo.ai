@@ -1,6 +1,6 @@
 # Research
 
-## Resources:
+## Resources
 
 ### From Post about underwater PSI
 
@@ -11,20 +11,18 @@ Five-thousand, and you're up to 2,247 psi.
 And you've still got another thirty-four thousand feet to go before you reach the deepest spot, and 17,500 psi!
 It's difficult because without some very, very, very careful engineering, anything you send, manned or unmanned, ends up like a beer can run over by a semi…"
 
-
 ## Physical Model
 
 1. A device that has motors, camera, body, no wires, sensors.
 
-
 ## How?
 
-### Main Components: 
+### Main Components
 
 Agent (Brain), Tracking System, Control System, Mission System, Telemetry System.
 
 * Agent -> Trained model that decides how to act according to the mission's
-  settings, suppossed to be solo explorer, go off the grid until completion. 
+  settings, suppossed to be solo explorer, go off the grid until completion.
 * Tracking System -> How we track the agent, position, health-checks.
 * Control System -> Option for overriding the agent's controls and taking over
   the move decisions, play around with the camera.
@@ -37,7 +35,7 @@ Agent (Brain), Tracking System, Control System, Mission System, Telemetry System
 ### Agent
 
 * Small LLM (Large Language Model): A. Could interact with my home pc.
-  B. Could integrate small LLM and llama.cpp for inference, API wrapper for 
+  B. Could integrate small LLM and llama.cpp for inference, API wrapper for
     the interaction.
   C. Which model? llama4? chat-gpt oss?
   D. Define set of rules and basic "brain" for the agent, who is he, mission,
@@ -57,4 +55,3 @@ Agent (Brain), Tracking System, Control System, Mission System, Telemetry System
 
 * Set a mission, provide data, how do we pass data correctly, pulses of data
   while the mission is running from the agent.
-

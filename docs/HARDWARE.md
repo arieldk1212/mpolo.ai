@@ -4,9 +4,13 @@
 
 ### Camera
 
-### MicroController
+* Logitech C270
 
-* To connect (OLD): ssh adk@adk.local, pass: adk, WITHOUT tailscale (Ras OS).
+### MCU & Board
+
+#### Board
+
+* To connect (OLD): ssh <adk@adk.local>, pass: adk, WITHOUT tailscale (Ras OS).
 * To connect (UPDATED): ssh adk@192.168.7.8, WITHOUT tailscale (Ubuntu 26.04 + ROS 2 Lyrical Luth).
 
 * Raspberrypi 4 Model B 4GB RAM.
@@ -31,6 +35,10 @@ Micro-SD card slot for loading operating system and data storage
 5V DC via GPIO header (minimum 3A*)
 Power over Ethernet (PoE) enabled (requires separate PoE HAT)
 Operating temperature: 0 – 50 degrees C ambient
+
+#### MCU
+
+* ESP32S3 FreeRTOS, Clang.
 
 ### Motors
 
