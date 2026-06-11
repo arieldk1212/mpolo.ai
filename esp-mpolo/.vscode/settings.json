@@ -1,0 +1,13 @@
+{
+  "C_Cpp.intelliSenseEngine": "default",
+  "idf.extensionActivationMode": "always",
+  "clangd.path": "/Users/arielkriheli/.espressif/tools/esp-clangd/esp-21.1.3_20260408/esp-clangd/bin/clangd",
+  "clangd.arguments": [
+    "--background-index",
+    "--query-driver=**",
+    "--compile-commands-dir=/Users/arielkriheli/Projects/mpolo.ai/rt-test/build"
+  ],
+  "idf.currentSetup": "/Users/arielkriheli/.espressif/v6.0.1/esp-idf",
+  "idf.flashType": "UART",
+  "idf.port": "/dev/tty.usbmodem5C4C2138261"
+}
