@@ -6,7 +6,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/FreeRTOSConfig.h"
 
-namespace rt {
+namespace rt::util {
 
 static std::string GetTime() {
   auto current_ticks = xTaskGetTickCount();
@@ -14,6 +14,6 @@ static std::string GetTime() {
   return std::to_string(time_ms);
 }
 
-}  // namespace rt
+}  // namespace rt::util
 
 #endif
