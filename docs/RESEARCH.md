@@ -55,3 +55,27 @@ Agent (Brain), Tracking System, Control System, Mission System, Telemetry System
 
 * Set a mission, provide data, how do we pass data correctly, pulses of data
   while the mission is running from the agent.
+
+### ESP32S3 - Responsibilities
+
+* Responsible for the motors, sensors, etc.
+* connects over UART with raspi.
+* has the control system flashed in the chip.
+* has an open channel of sensors and general telemetry.
+* sends data of PSD, of certain mission frequencies to log and track anomalies.
+
+### Raspberry Pi - Responsibilities
+
+* OpenCV with the camera.
+* responsible for the whole pipeline of identification, tracking, sending over controls and where to move.
+* has an integrated llm model (TinyML) with its own dataset.
+* HTTP server.
+* can also write custom kernels for the ai computation.
+* UI for all the systems, camera, etc.
+
+### Mission Workflow
+
+1. Identification - Camera identifies a fish, labels it.
+2. Thinking - Is it the mission's fish?
+3. Track - Send commands, where, capture, track.
+4. Autonomous!

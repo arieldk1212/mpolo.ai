@@ -38,12 +38,30 @@ Operating temperature: 0 – 50 degrees C ambient
 
 #### MCU
 
-* ESP32S3 FreeRTOS, Clang.
+* ESP32S3 - FreeRTOS
+* Components: esp-dsp
+* Comms: UART
 
 ### Motors
 
-### Sensors
+* 2 Motors, Big size, DC, water-proof
 
-* GPS
+### Sensors/Modules
+
+* 2 Lights
+* GPS Module
 
 ### Batteries
+
+* Long operation batteries (lithium based)
+
+### Memory
+
+* SD Card for storing data, images, videos
+
+### Frame
+
+* Could also be just plastic box
+* Underwater viable
+* Viable PSI for basic operation
+* 2 MCU's positions
