@@ -5,9 +5,10 @@ idf_component_register(
   INCLUDE_DIRS 
   "."
   "util"
-  "dsp"
   "core"
+  "sensors"
+  "uart"
 
   REQUIRES
-  esp-dsp
+  # esp-dsp # Not needed
 )

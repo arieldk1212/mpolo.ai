@@ -44,8 +44,24 @@ Operating temperature: 0 – 50 degrees C ambient
 
 ### Motors
 
+* 2 Motors, Big size, DC, water-proof
+
 ### Sensors/Modules
 
-* GPS
+* 2 Lights
+* GPS Module
 
 ### Batteries
+
+* Long operation batteries (lithium based)
+
+### Memory
+
+* SD Card for storing data, images, videos
+
+### Frame
+
+* Could also be just plastic box
+* Underwater viable
+* Viable PSI for basic operation
+* 2 MCU's positions
