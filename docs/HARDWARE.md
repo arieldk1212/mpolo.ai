@@ -38,11 +38,13 @@ Operating temperature: 0 – 50 degrees C ambient
 
 #### MCU
 
-* ESP32S3 FreeRTOS, Clang.
+* ESP32S3 - FreeRTOS
+* Components: esp-dsp
+* Comms: UART
 
 ### Motors
 
-### Sensors
+### Sensors/Modules
 
 * GPS
 
