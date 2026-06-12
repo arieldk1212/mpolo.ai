@@ -11,4 +11,6 @@ idf_component_register(
 
   REQUIRES
   # esp-dsp # Not needed
+  esp_driver_uart
+  esp_driver_gpio
 )

@@ -15,20 +15,16 @@ class MpoloVector {
   using PVector = std::pmr::vector<T>;
 
   MpoloVector()
-      : data_(std::move(InitBuffer())) {}
+      : pool_(buffer_.data(), buffer_.size() * sizeof(T),
+              std::pmr::null_memory_resource()),
+        data_(&pool_) {}
 
-  PVector& Get() { return data_; }
-  [[nodiscard]] int Size() const { return data_.size(); }
+  [[nodiscard]] PVector& Get() { return data_; }
+  [[nodiscard]] std::size_t Size() const { return data_.size(); }
 
  private:
-  PVector InitBuffer() {
-    std::array<T, S> buffer;
-    std::pmr::monotonic_buffer_resource pool(&buffer, buffer.size(),
-                                             std::pmr::null_memory_resource());
-    PVector data(&buffer);
-    return data;
-  }
-
+  std::array<T, S> buffer_;
+  std::pmr::monotonic_buffer_resource pool_;
   PVector data_;
 };
 
