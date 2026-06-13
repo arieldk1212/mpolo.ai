@@ -7,6 +7,7 @@
 #include <functional>
 
 #include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
 #include "soc/rtc.h"
 
 namespace rt::core {
@@ -43,6 +44,26 @@ static void TaskTrampoline(void* pvParameters) {
     (*func)();
   }
   vTaskDelete(nullptr);
+}
+
+static void RemainingStackMemory() {
+  auto rem = uxTaskGetStackHighWaterMark(nullptr);
+  ESP_LOGI("STACK", "Remaining Stack Memory: %d", static_cast<int>(rem));
+}
+
+static void RemainingTaskStackMemory(TaskHandle_t* handler) {
+  auto rem = uxTaskGetStackHighWaterMark(*handler);
+  ESP_LOGI("STACK", "Remaining Task Stack Memory: %d", static_cast<int>(rem));
+}
+
+static void RemainingHeapkMemory() {
+  auto rem = esp_get_free_heap_size();
+  ESP_LOGI("HEAP", "Remaining Heap Memory: %zu", rem);
+}
+
+static void RemainingMinimumHeapkMemory() {
+  auto rem = esp_get_minimum_free_heap_size();
+  ESP_LOGI("HEAP", "Remaining Minimum Heap Memory: %zu", rem);
 }
 
 }  // namespace rt::core

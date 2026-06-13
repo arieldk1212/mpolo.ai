@@ -3,8 +3,7 @@
 
 #include "comm.h"
 #include "metal.h"
+#include "system.h"
 #include "validators.h"
-
-namespace rt::core {}
 
 #endif
