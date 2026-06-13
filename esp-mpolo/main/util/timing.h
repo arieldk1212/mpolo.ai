@@ -2,7 +2,6 @@
 #define TIME_H_
 
 #include "freertos/FreeRTOS.h"
-#include "freertos/FreeRTOSConfig.h"
 
 namespace rt::util {
 

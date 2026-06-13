@@ -6,8 +6,8 @@ idf_component_register(
   "."
   "util"
   "core"
-  "sensors"
-  "uart"
+  "components"
+  "drivers"
 
   REQUIRES
   # esp-dsp # Not needed
