@@ -2,18 +2,19 @@
 #define MPOLO_UART_H_
 
 #include "esp_log.h"
-#include "esp_log_level.h"
 #include "metal.h"
 #include "portmacro.h"
 
 #include <functional>
+#include <string>
+#include <utility>
 
 #include "core/comm.h"
 #include "driver/uart.h"
-#include "freertos/task.h"
+#include "freertos/callback.h"
 #include "util/mpolo_vector.h"
 
-namespace rt::uart {
+namespace rt::drivers {
 
 static const char* const kTag = "UART";
 static constexpr int kBaudRate{115200};
@@ -76,6 +77,8 @@ class Uart : public core::Communication {
     }
   }
 
+  void UartCallback();
+
   void Send() override {}
 
   [[nodiscard]] const UartConfig& GetConfig() const { return uart_config_; }
@@ -98,12 +101,20 @@ struct UartTask {
   std::function<void()> method;
 };
 
-static void RunUartTask(Uart* uart, UartTask& task) {
-  auto tas = xTaskCreatePinnedToCore(core::TaskTrampoline, task.kName,
-                                     uart->GetConfig().stack_size,
-                                     &(task.method), 10, nullptr, 0);
+static void RunUartCallback(Uart* uart, UartTask& callback) {
+  auto task = xTaskCreatePinnedToCore(core::TaskTrampoline, callback.kName,
+                                      uart->GetConfig().stack_size,
+                                      &(callback.method), 10, nullptr, 0);
 }
 
-}  // namespace rt::uart
+template <typename TFunc>
+static void RunUartCallback(Uart* uart, TFunc&& func,
+                            const std::string& callback_name) {
+  auto task =
+      xTaskCreatePinnedToCore(std::forward<TFunc>(func), callback_name,
+                              uart->GetConfig().stack_size, 0, 10, nullptr, 0);
+}
+
+}  // namespace rt::drivers
 
 #endif

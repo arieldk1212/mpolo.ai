@@ -1,2 +1,3 @@
 # mpolo.ai
-explorer
+
+Fully autonomous underwater agent - marco polo explorer

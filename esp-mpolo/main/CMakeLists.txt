@@ -6,7 +6,7 @@ idf_component_register(
   "."
   "util"
   "core"
-  "sensors"
+  "components"
   "drivers"
 
   REQUIRES

@@ -11,6 +11,13 @@ Five-thousand, and you're up to 2,247 psi.
 And you've still got another thirty-four thousand feet to go before you reach the deepest spot, and 17,500 psi!
 It's difficult because without some very, very, very careful engineering, anything you send, manned or unmanned, ends up like a beer can run over by a semi…"
 
+### Development
+
+* What is a sensor? module? component? device? learn how to identify each..
+* Make sure every once in a while the robot should come up only to transmit a GPS signal, health-check, if it collected important data - wait for downloading at the data center.
+* Satellite communication?
+* Self-destruct mechanisim??
+
 ## Physical Model
 
 1. A device that has motors, camera, body, no wires, sensors.
