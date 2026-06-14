@@ -17,6 +17,11 @@ It's difficult because without some very, very, very careful engineering, anyt
 * Make sure every once in a while the robot should come up only to transmit a GPS signal, health-check, if it collected important data - wait for downloading at the data center.
 * Satellite communication?
 * Self-destruct mechanisim??
+* Data communication via lasers??
+* Add OpenCV - New version with LLM integration!!
+* GStreamer!!
+* Add Zephyr to STM32
+* GPS Integration.
 
 ## Physical Model
 
