@@ -73,3 +73,4 @@ build
 sdkconfig
 sdkconfig.*
 warnings.txt
+.history

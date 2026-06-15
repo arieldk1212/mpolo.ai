@@ -42,6 +42,12 @@ Operating temperature: 0 – 50 degrees C ambient
 * Components: esp-dsp
 * Comms: UART
 
+#### MCU 2
+
+* STM32-G474RE
+* Comms: UART
+* OS: ZephyrRTOS
+
 ### Motors
 
 * 2 Motors, Big size, DC, water-proof
