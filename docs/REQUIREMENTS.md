@@ -15,7 +15,11 @@
 ## Software Requirements
 
 * What is a sensor? module? component? device? learn how to identify each..
-* Should we do polling or interrupts? we do both.
+
+* Use Polling + Interrupts.
+* Interrupts: Timer, GPIO, UART -> Make ISR's short!
+* Polling: User Input, Display Render (if needed), Communications Parsing, Data TX/RX.
+* Cast to uint8_t buffers.
 * Make sure every once in a while the robot should come up only to transmit a GPS signal, health-check, if it collected important data - wait for downloading at the data center.
 * Satellite communication?
 * Self-destruct mechanisim??

@@ -78,7 +78,6 @@ class Uart : public core::Communication {
   }
 
   void UartCallback();
-
   void Send() override {}
 
   [[nodiscard]] const UartConfig& GetConfig() const { return uart_config_; }

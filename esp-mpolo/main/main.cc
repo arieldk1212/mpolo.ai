@@ -16,5 +16,9 @@ extern "C" void app_main(void) {
   rt::core::RemainingHeapkMemory();
 
   ESP_LOGI("MAIN", "eso-mpolo App Starting");
+
+  while (1) {
+    // Handle ISR's Here.
+  }
 }
 // NOLINTEND

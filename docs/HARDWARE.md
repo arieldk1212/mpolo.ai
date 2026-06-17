@@ -18,7 +18,7 @@
 
 * Raspberrypi 4 Model B 4GB RAM.
 
-* OS: Ubuntu 26.04 LTS + ROS.
+* OS: Ubuntu 26.04 LTS + ROS 2 Lyrical Luth.
 
 * Architecture:
 Broadcom BCM2711, Quad core Cortex-A72 (ARM v8) 64-bit SoC @ 1.8GHz
