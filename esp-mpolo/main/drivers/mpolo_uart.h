@@ -10,9 +10,9 @@
 #include <utility>
 
 #include "core/comm.h"
+#include "core/containers/mpolo_vector.h"
 #include "driver/uart.h"
 #include "freertos/callback.h"
-#include "util/mpolo_vector.h"
 
 namespace rt::drivers {
 
@@ -40,7 +40,7 @@ struct UartCommConfig {
 
 class Uart : public core::Communication {
  public:
-  using Buffer = util::MpoloVector<uint8_t, kUartStackSize>;
+  using Buffer = core::containers::MpoloVector<uint8_t, kUartStackSize>;
 
   Uart() {
     esp_log_level_set(kTag, esp_log_level_t::ESP_LOG_INFO);

@@ -17,7 +17,7 @@ extern "C" void app_main(void) {
 
   ESP_LOGI("MAIN", "eso-mpolo App Starting");
 
-  while (1) {
+  while (true) {
     // Handle ISR's Here.
   }
 }
