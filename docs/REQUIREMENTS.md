@@ -40,6 +40,7 @@
 * has the control system flashed in the chip.
 * has an open channel of sensors and general telemetry.
 * sends data of PSD, of certain mission frequencies to log and track anomalies.
+* RF Shield? ML Calculations?
 
 ### Raspberry Pi - Responsibilities
 
