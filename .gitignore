@@ -73,3 +73,5 @@ build
 sdkconfig
 sdkconfig.*
 warnings.txt
+.history
+.DS_Store

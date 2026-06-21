@@ -1,5 +1,8 @@
 # Hardware
 
+* Note: Create a sheet that has all the electronic components, fields:
+  Part Number - Desc - Manufacturer - Package - Quantity - Price - I/O
+
 ## Base Components
 
 ### Camera
@@ -15,7 +18,7 @@
 
 * Raspberrypi 4 Model B 4GB RAM.
 
-* OS: Ubuntu 26.04 LTS + ROS.
+* OS: Ubuntu 26.04 LTS + ROS 2 Lyrical Luth.
 
 * Architecture:
 Broadcom BCM2711, Quad core Cortex-A72 (ARM v8) 64-bit SoC @ 1.8GHz
@@ -36,15 +39,22 @@ Micro-SD card slot for loading operating system and data storage
 Power over Ethernet (PoE) enabled (requires separate PoE HAT)
 Operating temperature: 0 – 50 degrees C ambient
 
-#### MCU
+#### MCUs
 
-* ESP32S3 - FreeRTOS
-* Components: esp-dsp
+* ESP32S3
 * Comms: UART
+* OS: FreeRTOS
+* Components: esp-dsp
+* Quantity: 1
+
+* STM32-G474RE
+* Comms: UART
+* OS: ZephyrRTOS
+* Quantity: 1
 
 ### Motors
 
-* 2 Motors, Big size, DC, water-proof
+* 3 Motors - Underwater Thrusters.
 
 ### Sensors/Modules
 
@@ -53,7 +63,9 @@ Operating temperature: 0 – 50 degrees C ambient
 
 ### Batteries
 
-* Long operation batteries (lithium based)
+* 12V Lithium Battery for the Thrusters.
+* 3.3V Lithium Battery for the STM32.
+* 5V Lithium Battery for the Raspberrypi Model 4.
 
 ### Memory
 
@@ -65,3 +77,7 @@ Operating temperature: 0 – 50 degrees C ambient
 * Underwater viable
 * Viable PSI for basic operation
 * 2 MCU's positions
+
+### Communications
+
+* UART: RASPI -> STM32
