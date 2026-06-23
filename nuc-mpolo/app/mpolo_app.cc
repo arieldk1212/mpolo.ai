@@ -4,7 +4,8 @@
 
 __IO uint32_t kBspButtonState = BUTTON_RELEASED;
 
-extern "C" void MpoloMainTask() {
+extern "C" void MpoloDefaultTask() {
+  std::printf("Mpolo.ai App Starting..\n\r");
   while (true) {
     // if (kBspButtonState == BUTTON_PRESSED) {
     // BSP_LED_On(LED_GREEN);
@@ -14,9 +15,4 @@ extern "C" void MpoloMainTask() {
     // BSP_LED_Off(LED_GREEN);
     // HAL_Delay(1000);
   }
-}
-
-extern "C" void MpoloApp(void* arguments) {
-  std::printf("Mpolo.ai App Starting..\n\r");
-  MpoloMainTask();
 }

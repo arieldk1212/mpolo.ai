@@ -1,6 +1,7 @@
 #ifndef MPOLO_APP_H_
 #define MPOLO_APP_H_
 
+#include "cmsis_os2.h"
 #include "stm32g4xx_nucleo.h"
 
 #ifdef __cplusplus
@@ -9,9 +10,14 @@ extern "C" {
 
 extern __IO uint32_t kBspButtonState;
 
-void MpoloMainTask();
+extern osThreadId_t kMpoloDefaultTaskHandle;
+static const osThreadAttr_t kMpoloDefaultTaskAttributes = {
+    .name = "MpoloDefaultTask",
+    .stack_size = 128 * 4,
+    .priority = (osPriority_t)osPriorityNormal,
+};
 
-void MpoloApp(void* arguments);
+void MpoloDefaultTask();
 
 #ifdef __cplusplus
 }

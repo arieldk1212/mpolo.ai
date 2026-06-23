@@ -46,8 +46,6 @@ int main(void) {
     Error_Handler();
   }
 
-  osThreadNew(MpoloApp, NULL, NULL);
-
   osKernelStart();
 }
 
