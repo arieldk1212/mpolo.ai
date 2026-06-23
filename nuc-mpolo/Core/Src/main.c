@@ -1,4 +1,6 @@
+
 #include "cmsis_os.h"
+#include "cmsis_os2.h"
 #include "dma.h"
 #include "gpio.h"
 #include "main.h"
@@ -18,33 +20,23 @@ void MX_FREERTOS_Init(void);
  * @retval int
  */
 int main(void) {
-  /* Reset of all peripherals, Initializes the Flash interface and the Systick.
-   */
   HAL_Init();
 
-  /* Configure the system clock */
   SystemClock_Config();
 
-  /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_DMA_Init();
   MX_USART1_UART_Init();
   MX_TIM2_Init();
 
-  /* Init scheduler */
   osKernelInitialize(); /* Call init function for freertos objects (in
                            cmsis_os2.c) */
   MX_FREERTOS_Init();
 
-  /* Initialize led */
   BSP_LED_Init(LED_GREEN);
 
-  /* Initialize USER push-button, will be used to trigger an interrupt each time
-   * it's pressed.*/
   BSP_PB_Init(BUTTON_USER, BUTTON_MODE_EXTI);
 
-  /* Initialize COM1 port (115200, 8 bits (7-bit data + 1 stop bit), no parity
-   */
   BspCOMInit.BaudRate = 115200;
   BspCOMInit.WordLength = COM_WORDLENGTH_8B;
   BspCOMInit.StopBits = COM_STOPBITS_1;
@@ -54,13 +46,9 @@ int main(void) {
     Error_Handler();
   }
 
-  printf("Welcome to STM32 world !\n\r");
-  // BSP_LED_On(LED_GREEN);
+  osThreadNew(MpoloApp, NULL, NULL);
 
-  /* Start scheduler */
   osKernelStart();
-
-  MpoloApp();
 }
 
 /**
@@ -115,13 +103,15 @@ void SystemClock_Config(void) {
  * @retval None
  */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim) {
-  /* USER CODE Callback 0 */
+  /* USER CODE BEGIN Callback 0 */
 
+  /* USER CODE END Callback 0 */
   if (htim->Instance == TIM1) {
     HAL_IncTick();
   }
+  /* USER CODE BEGIN Callback 1 */
 
-  /* USER CODE Callback 1 */
+  /* USER CODE END Callback 1 */
 }
 
 /**
@@ -132,6 +122,18 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim) {
 void BSP_PB_Callback(Button_TypeDef Button) {
   if (Button == BUTTON_USER) {
     *BspButtonState = BUTTON_PRESSED;
+    BSP_LED_Toggle(LED_GREEN);
+  }
+}
+
+/**
+ * @brief GPIO EXTI Callback
+ * @param GPIO_Pin
+ * @retval None
+ */
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
+  if (GPIO_Pin == GPIO_PIN_13) {
+    BSP_LED_Toggle(LED_GREEN);
   }
 }
 

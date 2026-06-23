@@ -1,0 +1,2 @@
+screen /dev/tty.usbmodemX 115200
+to quit : Ctrl+a -> k -> y

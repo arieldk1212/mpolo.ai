@@ -9,7 +9,9 @@ extern "C" {
 
 extern __IO uint32_t kBspButtonState;
 
-void MpoloApp();
+void MpoloMainTask();
+
+void MpoloApp(void* arguments);
 
 #ifdef __cplusplus
 }

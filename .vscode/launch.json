@@ -5,20 +5,12 @@
     {
       "cwd": "${workspaceFolder}",
       "executable": "nuc-mpolo/build/nuc-mpolo.elf",
-      "name": "Debug with ST-Link",
+      "name": "Debug STM32 - ST-Link",
       "request": "launch",
       "type": "cortex-debug",
       "runToEntryPoint": "main",
       "showDevDebugOutput": "raw",
       "servertype": "stlink"
     },
-    
-    
-    {
-      "type": "gdbtarget",
-      "request": "attach",
-      "name": "Eclipse CDT GDB Adapter",
-      "program": "${workspaceFolder}/nuc-mpolo/build/nuc-mpolo.elf"
-    }
   ]
 }

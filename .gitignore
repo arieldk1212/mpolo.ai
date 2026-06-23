@@ -75,3 +75,4 @@ sdkconfig.*
 warnings.txt
 .history
 .DS_Store
+.mxproject
