@@ -11,3 +11,4 @@
 5. Design and draw basic bread board schema, POC, general design.
 6. Design the main components and their API: Led, Motor, Comms, Camera, Start with basic integration with the chip and the system in general, after that start communicating with the board, self explanatory.
 7. Start working on the board itself, base project, components, get a better grasp of what it takes to build and get to the final product.
+8. Add YOLO.
