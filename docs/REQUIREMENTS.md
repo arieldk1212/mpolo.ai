@@ -26,10 +26,10 @@
 * Data communication via lasers??
 * Add OpenCV - New version with LLM integration!!
 * GStreamer!!
-* Add Zephyr to STM32
 * GPS Integration.
 * Agent, Tracking, Control, Mission, UI.
 * HTTP, LLM.
+* Use CMSIS RTOS V2!
 
 ## Responsibilities
 
@@ -41,11 +41,12 @@
 * has an open channel of sensors and general telemetry.
 * sends data of PSD, of certain mission frequencies to log and track anomalies.
 * RF Shield? ML Calculations?
+* What sensors to addd? Temperature/Motion, what else? what's needed for underwater activity?
 
 ### Raspberry Pi - Responsibilities
 
 * OpenCV with the camera.
-* responsible for the whole pipeline of identification, tracking, sending over controls and where to move.
+* Responsible for the whole pipeline of identification, tracking, sending over controls and where to move.
 * has an integrated llm model (TinyML) with its own dataset.
 * HTTP server.
 * can also write custom kernels for the ai computation.

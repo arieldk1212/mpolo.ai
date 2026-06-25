@@ -14,7 +14,7 @@ extern "C" void MpoloDefaultTask(void* arguments) {
   demo_packet.kMessage = "HI!\r\n";
 
   while (true) {
-    mpolo::uart::Transmit(demo_packet);
+    mpolo::uart::MpoloUart::Transmit(demo_packet);
     osDelay(500);
   }
 
@@ -25,4 +25,6 @@ extern "C" void MpoloDefaultTask(void* arguments) {
   // HAL_Delay(1000);
   // BSP_LED_Off(LED_GREEN);
   // HAL_Delay(1000);
+
+  osThreadTerminate(NULL);
 }
