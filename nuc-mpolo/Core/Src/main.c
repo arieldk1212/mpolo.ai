@@ -1,11 +1,7 @@
-
-#include "cmsis_os.h"
-#include "cmsis_os2.h"
 #include "dma.h"
 #include "gpio.h"
 #include "main.h"
 #include "mpolo_app.h"
-#include "stm32g4xx_nucleo.h"
 #include "tim.h"
 #include "usart.h"
 
@@ -21,7 +17,6 @@ void MX_FREERTOS_Init(void);
  */
 int main(void) {
   HAL_Init();
-
   SystemClock_Config();
 
   MX_GPIO_Init();
@@ -29,14 +24,11 @@ int main(void) {
   MX_USART1_UART_Init();
   MX_TIM2_Init();
 
-  osKernelInitialize(); /* Call init function for freertos objects (in
-                           cmsis_os2.c) */
-  MX_FREERTOS_Init();
-
   BSP_LED_Init(LED_GREEN);
-
   BSP_PB_Init(BUTTON_USER, BUTTON_MODE_EXTI);
 
+  /* Initialize COM1 port (115200, 8 bits (7-bit data + 1 stop bit), no parity
+   */
   BspCOMInit.BaudRate = 115200;
   BspCOMInit.WordLength = COM_WORDLENGTH_8B;
   BspCOMInit.StopBits = COM_STOPBITS_1;
@@ -45,7 +37,11 @@ int main(void) {
   if (BSP_COM_Init(COM1, &BspCOMInit) != BSP_ERROR_NONE) {
     Error_Handler();
   }
+  BSP_COM_SelectLogPort(COM1);
 
+  osKernelInitialize(); /* Call init function for freertos objects (in
+                           cmsis_os2.c) */
+  MX_FREERTOS_Init();
   osKernelStart();
 }
 
@@ -107,9 +103,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim) {
   if (htim->Instance == TIM1) {
     HAL_IncTick();
   }
-  /* USER CODE BEGIN Callback 1 */
-
-  /* USER CODE END Callback 1 */
 }
 
 /**

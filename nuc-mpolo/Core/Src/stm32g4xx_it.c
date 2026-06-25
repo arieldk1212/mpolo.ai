@@ -19,9 +19,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "stm32g4xx_hal_gpio.h"
 #include "stm32g4xx_it.h"
-#include "stm32g4xx_nucleo.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 /* USER CODE END Includes */
@@ -182,8 +180,14 @@ void TIM2_IRQHandler(void) {
  * @brief This function handles EXTI line[15:10] interrupts.
  */
 void EXTI15_10_IRQHandler(void) {
+  /* USER CODE BEGIN EXTI15_10_IRQn 0 */
+
+  /* USER CODE END EXTI15_10_IRQn 0 */
   HAL_EXTI_IRQHandler(&hpb_exti[BUTTON_USER]);  // Using BSP
   // HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_13);  // Old
+  /* USER CODE BEGIN EXTI15_10_IRQn 1 */
+
+  /* USER CODE END EXTI15_10_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */

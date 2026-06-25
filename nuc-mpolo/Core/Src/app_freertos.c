@@ -1,4 +1,3 @@
-
 #include "FreeRTOS.h"
 #include "mpolo_app.h"
 #include "task.h"
@@ -49,16 +48,11 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE END RTOS_EVENTS */
 }
 
-/* USER CODE BEGIN Header_StartDefaultTask */
 /**
  * @brief  Function implementing the defaultTask thread.
  * @param  argument: Not used
  * @retval None
  */
-/* USER CODE END Header_StartDefaultTask */
 void StartDefaultTask(void* argument) {
   MpoloDefaultTask();
-  // for (;;) {
-  //   osDelay(1);
-  // }
 }

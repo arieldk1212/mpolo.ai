@@ -2,23 +2,21 @@
 #define MPOLO_UART_H_
 
 #include "stm32g4xx_hal_uart.h"
+#include "stm32g4xx_nucleo.h"
 #include "usart.h"
 
-#include <string>
+#include <cstring>
 
 namespace mpolo::uart {
 
 struct UartTxPacket {
-  std::string message;
-  uint32_t timeout{100};
+  char* kMessage;
+  uint32_t timeout{COM_POLL_TIMEOUT};
 };
 
-static void Transmit() {
-  UartTxPacket packet;
-  packet.message = "hi";
-
-  HAL_UART_Transmit(&huart1, packet.message.c_str(),
-                    static_cast<uint16_t>(packet.message.size()), packet.timeout);
+inline void Transmit(const UartTxPacket& packet) {
+  HAL_UART_Transmit(&huart1, reinterpret_cast<uint8_t*>(packet.kMessage),
+                    strlen(packet.kMessage), packet.timeout);
 }
 
 }  // namespace mpolo::uart
