@@ -17,8 +17,7 @@ static const osThreadAttr_t kMpoloDefaultTaskAttributes = {
     .priority = (osPriority_t)osPriorityNormal,
 };
 
-void MpoloMain();
-void MpoloDefaultTask();
+void MpoloDefaultTask(void* arguments);
 
 #ifdef __cplusplus
 }

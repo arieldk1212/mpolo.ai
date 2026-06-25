@@ -4,8 +4,6 @@
 
 osThreadId_t kMpoloDefaultTaskHandle;
 
-void StartDefaultTask(void* argument);
-
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
 /**
@@ -37,7 +35,7 @@ void MX_FREERTOS_Init(void) {
   /* Create the thread(s) */
   /* creation of defaultTask */
   kMpoloDefaultTaskHandle =
-      osThreadNew(StartDefaultTask, NULL, &kMpoloDefaultTaskAttributes);
+      osThreadNew(MpoloDefaultTask, NULL, &kMpoloDefaultTaskAttributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -46,13 +44,4 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN RTOS_EVENTS */
   /* add events, ... */
   /* USER CODE END RTOS_EVENTS */
-}
-
-/**
- * @brief  Function implementing the defaultTask thread.
- * @param  argument: Not used
- * @retval None
- */
-void StartDefaultTask(void* argument) {
-  MpoloDefaultTask();
 }

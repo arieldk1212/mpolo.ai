@@ -1,5 +1,5 @@
+#include "cmsis_os2.h"
 #include "mpolo_app.h"
-#include "stm32g4xx_hal.h"
 
 #include <cstdio>
 
@@ -7,21 +7,16 @@
 
 __IO uint32_t kBspButtonState = BUTTON_RELEASED;
 
-void MpoloMain() {
-  mpolo::uart::UartTxPacket packet;
-  packet.kMessage = "HI!";
+extern "C" void MpoloDefaultTask(void* arguments) {
+  std::printf("Mpolo.ai App Starting..\r\n");
+
+  mpolo::uart::UartTxPacket demo_packet;
+  demo_packet.kMessage = "HI!\r\n";
 
   while (true) {
-    mpolo::uart::Transmit(packet);
-    // osDelay(100);
-    HAL_Delay(500);
+    mpolo::uart::Transmit(demo_packet);
+    osDelay(500);
   }
-}
-
-extern "C" void MpoloDefaultTask() {
-  std::printf("Mpolo.ai App Starting..\n\r");
-
-  MpoloMain();
 
   // if (kBspButtonState == BUTTON_PRESSED) {
   // BSP_LED_On(LED_GREEN);
